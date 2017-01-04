@@ -1,15 +1,15 @@
 # AngularJS Template Basic for JAVA Web Applications
 ## Requirements
-1. Modern Browser (Firefox, Opera, Internet Explorer, Chrome, Safari ect... and relatives mobile versions see Bootstrap and AngularJS requisites)
+1. Modern Browser (Firefox, Opera, Internet Explorer, Chrome, Safari ect... and relatives mobile versions see Bootstrap and AngularJS requisites).
 
 ## Requirements for developers
 ### Frontend
-1. good with npm and node.js for testing (I use http-server also)
-2. Chrome or Firefox for testing
+1. Good with npm and node.js for testing (I use http-server also).
+2. Chrome or Firefox for testing.
 3. A good IDE that support javascript, typescript and angularjs.
 ### Backend
-1. Glassfish Server
-2. a good IDE to programming in J2EE I found with Glassfish is very easy Netbeans.
+1. Glassfish Server.
+2. A good IDE to programming in J2EE I found with Glassfish is very easy Netbeans.
 
 ## Introduction
 With this template I integrate AngularJS (1.5.x) with Bootstrap and the data of this template is populated through a simple web service connected to a MYSQL DB.
