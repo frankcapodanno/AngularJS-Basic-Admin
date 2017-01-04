@@ -1,6 +1,7 @@
 # AngularJS Template Basic for JAVA Web Applications
 ## Requirements
 1. Modern Browser (Firefox, Opera, Internet Explorer, Chrome, Safari ect... and relatives mobile versions see Bootstrap and AngularJS requisites).
+You can visit this page to see this template: http://capodanno.click/bootstrap-examples/angularjs-admin-basic 
 
 ## Requirements for developers
 ### Frontend
