@@ -1,0 +1,15 @@
+<h2> {{subtitle}} </h2>
+
+ <div ng-controller="ModalCtrl as $ctrl"ng-repeat="product in products" class="col-md-6"> 
+  <div class="modal-list thumbnail"> 
+   
+    <img ng-click="$ctrl.selectDescription(selectItem($index)); $ctrl.open()"  ng-src="{{product.cover}}">
+    
+    <p class="title">{{ product.name }}</p> 
+    <p class="price">{{ product.price | currency }}</p> 
+    <p class="date">{{ product.pubdate | date }}</p> 
+    <div class ="rating">
+      <p class="likes" ng-click="plusOne($index)">+ {{product.likes}}</p>
+    </div>
+  </div> 
+ </div>

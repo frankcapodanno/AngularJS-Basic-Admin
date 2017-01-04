@@ -1,0 +1,41 @@
+<div ng-repeat="alert in alerts" class="{{alert.type}}">{{alert.msg}} at <strong> {{getDateTimeNow() | date}} </strong></div>
+
+     <div class="right_col" role="main">
+          <div class="">
+            <div class="row top_tiles">
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="panel-not">
+                  <div class="icon"><i class="fa fa-comment-o fa-4x"></i></div>
+                  <div class="num">{{notifications[0].num}}</div>
+                  <h3>{{notifications[0].type}}</h3>
+                  <p>Just an example of ticket notifications</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="panel-not">
+                  <div class="icon"><i class="fa fa-comments-o fa-4x"></i></div>
+                  <div class="num">{{notifications[1].num}}</div>
+                  <h3>{{notifications[1].type}}</h3>
+                  <p>Just an example of email notifications</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="panel-not">
+                  <div class="icon"><i class="fa fa-comments-o fa-4x"></i></div>
+                  <div class="num">{{notifications[2].num}}</div>
+                  <h3>{{notifications[2].type}}</h3>
+                  <p>Just an example of upload notifications</p>
+                </div>
+              </div>
+               <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="panel-not">
+                  <div class="icon"><i class="fa fa-comments-o fa-4x"></i></div>
+                  <div class="num">{{notifications[3].num}}</div>
+                  <h3>{{notifications[3].type}}</h3>
+                  <p>Just an example of update notifications</p>
+                </div>
+              </div>
+            </div>
+     </div>
+
+</div>

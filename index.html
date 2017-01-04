@@ -1,0 +1,152 @@
+<!doctype html>
+<!--
+  Francesco Capodanno(c) 2016+ AngularJS frontend example with advanced feauters.
+-->
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AngularJS frontend example with advanced feauters.</title>
+    <!-- using CDN improve  the performance of the website -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+
+    <!-- customized css for the app -->
+    <link href="css/main.css" rel="stylesheet" />
+
+    <!-- last font-awesome using CDN -->
+    <script src="https://use.fontawesome.com/7ed0e6959d.js"></script>
+
+    <!-- Include the AngularJS 1.5.8 tested with bootstrap by AngularJS Team-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <!-- Include ui bootstrap for angular js -->
+    <script src="js/ui-bootstrap-tpls-2.3.1.min.js"></script>
+    <script src= "//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+
+    <!-- Include the AngularJS charts -->
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+
+    <!-- Include Angularjs-nvD3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.4/nv.d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.8/angular-nvd3.js"></script>
+
+    <!-- Include Jquery for preloaders and others proupouses using CDN  -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+  </head>
+
+<!-- preloaders and smoothy -->  
+<script type="text/javascript">
+     document.addEventListener("DOMContentLoaded", function(event) {
+      $('.pre-loading')
+             .fadeOut('slow')
+     });
+</script> 
+  
+  <body ng-app="myApp">
+
+    <!-- page preloader -->
+   <div class="pre-loading"></div>
+
+    <div class="header">
+      <div class="container">
+        <div ng-controller="CollapseCtrl">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#/">A menu</a>
+		</div>
+		<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+        
+				<li><a href="#/data-analysis">Data</a></li>
+				<li><a href="#/allerts">Allerts</a></li>
+        
+			</ul>
+      <ul class="nav navbar-nav navbar-right">  
+      <li class="dropdown" uib-dropdown>
+       <a role="button" class="dropdown-toggle" uib-dropdown-toggle>
+        <span class="glyphicon glyphicon-user"></span> Profile
+        <span class="caret"></span>
+       </a>
+             <ul class="dropdown-menu">
+              <li><a href="#/profile">Dashboard</a></li>
+              <li><a href="#/products">Products</a></li>
+              <li><a href="#/messages">Messages</a></li>
+        </ul>
+      </li>
+      <li><a ng-controller="ModalCtrl as $ctrl" 
+      ng-click="
+      $ctrl.setTitle('Not implemeted');
+      $ctrl.setMessage('this function is not implemeted. This app use data from a little web service just for evalutate proupouses'); 
+      $ctrl.open()">
+      <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+		</div>
+	</nav>
+</div>
+      </div>
+    </div>
+
+    <div class="main" ng-controller="MainController">
+
+ <!-- here appear the view of this app see js/app.js -->
+   <div class=container>
+      <div id="single-view" ng-view></div>
+   </div> 
+
+    </div> <!--end  main -->
+
+    <div class="footer">
+      <div class="container">
+        <h2>Return to home page.</h2>
+        <a href="https://capodanno.click">
+        <img src="img/logo.png" width="120px" />
+        </a>
+      </div>
+    </div> <!-- end footer -->
+    
+<!-- example message modal window -->
+<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">{{$ctrl.selected.title}}</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+          Description: {{ $ctrl.selected.item }} </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+         <!--   <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button> -->
+        </div>
+    </script>
+
+    
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Main Controllers -->
+    <!-- Arrange in separeted folders controllers, modules, service and provider is fundamental for big AngularJS projekts.-->
+    <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/ui/UiBootStrapDialog.js"></script>
+    <script src="js/controllers/ui/CollapseController.js"></script>
+    <script src="js/controllers/ui/Alerts.js"></script>
+    <!-- charts controllers -->
+    <script src="js/controllers/ui/charts/LineChartController.js"></script>
+    <script src="js/controllers/ui/charts/PieChart.js"></script>
+   
+  </body>
+</html>

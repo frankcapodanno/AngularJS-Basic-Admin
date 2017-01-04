@@ -1,0 +1,26 @@
+
+    <p> today the data that i found in db is: </p>
+    <!--
+        Here I use differents graphs
+    -->
+    <div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8"  ng-controller="LineCtrl" >
+       <canvas id="line" class="chart chart-line" chart-data="data"
+        chart-labels="labels" chart-series="series" chart-options="options"
+        chart-dataset-override="datasetOverride" chart-click="onClick">
+        </canvas>
+       </div>
+  <div class="col-xs-6 col-md-4">
+    <strong> General Sellout</strong>
+       <p>here you can see the sellout differences in this year of your product. Just for evalutate.</p>
+      </div>
+  </div>
+  <div class="row">An example with DV-3 graphs </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-4" ng-controller="PieChart"><nvd3 options="options" data="data"></div>
+      <div class="col-xs-6 col-sm-4"><strong> General Sellout</strong>
+       <p>The people that buy our products separated per age</p></div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+      <div class="clearfix hidden-sm-up"></div>
+      <div class="col-xs-6 col-sm-4"></div>
+</div>
