@@ -4,13 +4,16 @@
 You can visit this page to see this template: http://capodanno.click/bootstrap-examples/angularjs-admin-basic 
 
 ## Requirements for developers
+
 ### Frontend
 1. Good with npm and node.js for testing (I use http-server also).
 2. Chrome or Firefox for testing.
 3. A good IDE that support javascript, typescript and angularjs.
+
 ### Backend
 1. Glassfish Server.
 2. A good IDE to programming in J2EE.
+
 ## Introduction
 With this template, I integrate AngularJS (1.5.x) with Bootstrap and the data of this template is populated through a simple web service connected to an MYSQL DB.
 I used AngularJS 1.5.8 because this version was tested directly from the AngularJS Team.
